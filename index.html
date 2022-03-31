@@ -130,6 +130,11 @@
             window.onUnityLoadingProgressChanged = function(progress) {
                 loadingText.innerHTML = Math.ceil(progress * 100) + '%'
             }
+
+            function Share()
+            {
+                window.vkBridge.send("VKWebAppShare", {"link": "vk.com/app6909581#hello"});
+			}
             
             createUnityInstance(
                 document.querySelector('#unity-canvas'), 
@@ -157,6 +162,8 @@
                 window.focus()
                 canvas.focus()
             })
+
+            Share();
         </script>
     </body>
 </html>
