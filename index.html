@@ -136,7 +136,8 @@
             function Share()
             {
                 window.vkBridge.send("VKWebAppShare", {"link": "vk.com/app6909581#hello"});
-                console.info("Share")
+                window.vkBridge.send("VKWebAppAddToFavorites");
+                console.info('Share');
 			}
             
             createUnityInstance(
