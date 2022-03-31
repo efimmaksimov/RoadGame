@@ -56,8 +56,6 @@
                             state => { unityInstance.SendMessage('InstantGamesBridge', 'OnRewardedStateChanged', state) })
 
                         unityInstance.SendMessage('InstantGamesBridge', 'OnInitializationCompleted', 'true')
-
-                        Share();
                     })
                     .catch(error => {
                         unityInstance.SendMessage('InstantGamesBridge', 'OnInitializationCompleted', 'false')
@@ -135,9 +133,7 @@
 
             function Share()
             {
-                window.vkBridge.send("VKWebAppShare", {"link": "vk.com/app6909581#hello"});
-                window.vkBridge.send("VKWebAppAddToFavorites");
-                console.info('Share');
+                window.vkBridge.send("VKWebAppShare", {"link": "vk.com/app8112854"});
 			}
             
             createUnityInstance(
@@ -166,7 +162,6 @@
                 window.focus()
                 canvas.focus()
             })
-
         </script>
     </body>
 </html>
