@@ -131,9 +131,20 @@
                 loadingText.innerHTML = Math.ceil(progress * 100) + '%'
             }
 
-            function Share()
+            function Share(score)
             {
-                window.vkBridge.send("VKWebAppShare", {"link": "vk.com/app8112854"});
+                window.vkBridge.send("VKWebAppShowWallPostBox", {
+                "message": `� ���� ${score} ���� ����! �������� ������ ��� ������ � ���� ������ ���� ����!`,
+                "attachments": "https://vk.com/app8112854"
+                });
+
+			}
+
+            function InviteFriends()
+            {
+                window.vkBridge.send("VKWebAppShowInviteBox", {})
+                .then(data => console.log(data.success))  
+                .catch(error => console.log(error));
 			}
             
             createUnityInstance(
